@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Recipe Book</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-input"
+          oninput="searchRecipes()"
+          placeholder="Search recipes..."
+        />
+      </div>
+    </header>
+    <main>
+      <div class="form-container">
+        <form id="recipe-form">
+          <h2>Add Recipe</h2>
+          <div class="input-group">
+            <label for="recipe-name">Recipe Name</label>
+            <input
+              type="text"
+              id="recipe-name"
+              placeholder="Enter recipe name"
+            />
+          </div>
+          <div class="input-group">
+            <label for="recipe-ingredients">Ingredients</label>
+            <textarea
+              id="recipe-ingredients"
+              placeholder="Enter ingredients"
+            ></textarea>
+          </div>
+          <div class="input-group">
+            <label for="recipe-image">Image URL</label>
+            <input
+              type="text"
+              id="recipe-image"
+              placeholder="Enter image URL"
+            />
+          </div>
+          <div class="input-group">
+            <label for="recipe">Recipe</label>
+            <textarea id="recipe" placeholder="Enter recipe"></textarea>
+          </div>
+          <div class="button-group">
+            <button
+              type="button"
+              style="background-color: #4e68d0"
+              onclick="addRecipe()"
+            >
+              Add Recipe
+            </button>
+            <button
+              type="button"
+              id="updateBtn"
+              style="display: none"
+              onclick="updateRecipe()"
+              style="background-color: #4e68d0"
+            >
+              Update Recipe
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="recipe-list" class="recipe-list"></div>
+    </main>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Recipe</h2>
+        <div class="input-group">
+          <label for="edit-recipe-name">Recipe Name</label>
+          <input
+            type="text"
+            id="edit-recipe-name"
+            placeholder="Enter recipe name"
+          />
+        </div>
+        <div class="input-group">
+          <label for="edit-recipe-ingredients">Ingredients</label>
+          <textarea
+            id="edit-recipe-ingredients"
+            placeholder="Enter ingredients"
+          ></textarea>
+        </div>
+        <div class="input-group">
+          <label for="edit-recipe-image">Image URL</label>
+          <input
+            type="text"
+            id="edit-recipe-image"
+            placeholder="Enter image URL"
+          />
+        </div>
+        <div class="input-group">
+          <label for="edit-recipe">Recipe</label>
+          <textarea id="edit-recipe" placeholder="Enter recipe"></textarea>
+        </div>
+        <div class="button-group">
+          <button
+            type="button"
+            onclick="updateRecipe()"
+            style="background-color: #4e68d0"
+          >
+            Update Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
